@@ -29,7 +29,7 @@ def load_chain():
     )
 
     # 加载自定义 LLM
-    llm = InternLM_LLM(model_path = "../model/internlm-7b")
+    llm = InternLM_LLM(model_path = "./model/internlm-7b")
 
     # 定义一个 Prompt Template
     template = """使用以下上下文来回答和宪法有关的问题。如果你不知道答案，就说你不知道，不要试图编造答
