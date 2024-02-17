@@ -7,8 +7,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 from openxlab.model import download
 
-download(model_repo='OpenLMLab/internlm-chat-7b', 
-        model_name='InternLM-7b', output='./model/InternLM')
+download(model_repo='OpenLMLab/InternLM-7b', output='./model/internlm-7b')
 os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 
 os.system('huggingface-cli download --resume-download sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 --local-dir ./model/sentence-transformer')
@@ -30,7 +29,7 @@ def load_chain():
     )
 
     # 加载自定义 LLM
-    llm = InternLM_LLM(model_path = "./model/InternLM/internlm-chat-7b")
+    llm = InternLM_LLM(model_path = "../model/internlm-7b")
 
     # 定义一个 Prompt Template
     template = """使用以下上下文来回答和宪法有关的问题。如果你不知道答案，就说你不知道，不要试图编造答
